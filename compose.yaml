@@ -1,0 +1,124 @@
+# version: '3.9'
+
+services:
+
+    gcc:
+        image: gcc_image:latest
+        build:
+            context: ./gcc/
+            dockerfile: Dockerfile
+
+        container_name: gcc_container
+        hostname: gcc
+
+        stdin_open: true
+        tty: true
+
+        command: bin/bash
+
+        expose:
+            - 9225
+        ports:
+            -   "9225:9225"
+
+        volumes:
+            -   type: bind
+                source: ./gcc/cpp
+                target: /home
+
+    python:
+        image: python_image:latest
+        # image: pytorch_image:latest
+
+        build:
+            context: ./python/
+            dockerfile: Dockerfile
+            
+        container_name: python_container
+        hostname: python_container_host
+
+        working_dir: '/root/'
+
+        # shm_size: '1gb'
+
+        stdin_open: true
+        tty: true
+
+        # expose:
+        #     - 10009
+        ports:
+            -   "10009:10009"
+
+        volumes:
+            -   type: bind
+                source: ./python
+                target: /root
+
+        deploy:
+            resources:
+                reservations:
+                    devices:
+                    -   driver: nvidia
+                        device_ids: ['1','2']
+                        capabilities: [gpu]
+
+    # pytorch:
+    #     
+    #     build:
+    #         context: ./pytorch
+    #         dockerfile: Dockerfile
+        
+    #     container_name: pytorch_container
+    #     hostname: pytorch_container
+
+    #     shm_size: '4gb'
+
+    #     stdin_open: true
+    #     tty: true
+
+    #     # command: bin/bash
+
+    #     # expose:
+    #     #     - 9226
+    #     ports:
+    #         - "9926:9926"
+
+    #     volumes:
+    #         -   type: bind
+    #             source: ./pytorch
+    #             target: /workspace
+
+    #     deploy:
+    #         resources:
+    #             reservations:
+    #                 devices:
+    #                 -   driver: nvidia
+    #                     device_ids: ['1','2']
+    #                     capabilities: [gpu]
+
+
+    ubuntu:
+        image: ubuntu_image:latest
+        build:
+            context: ./ubuntu/
+            dockerfile: Dockerfile
+
+        container_name: ubuntu_container
+        hostname: ubuntu_container_host
+        
+        working_dir: '/root/'
+
+        stdin_open: true
+        tty: true
+
+        #command: /bin/bash
+
+        # expose:
+        #     - 10000
+        ports:
+            -   "10000:10000"
+
+        volumes:
+            -   type: bind
+                source: ./ubuntu
+                target: /root
