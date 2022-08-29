@@ -1,0 +1,28 @@
+# Machine Learning
+numpy
+# pandas
+# scikit-learn
+# scipy
+matplotlib
+# seaborn
+
+
+# Deep Learning
+# tensorflow
+# torch
+# torchvision
+# torchtext
+
+
+# Scraping
+# requests
+# beautifulsoup
+# scrapy
+# selenium
+
+# Test
+# pytest
+
+#Others
+jupyter
+#kaggle
