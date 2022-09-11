@@ -1,28 +1,55 @@
-# Machine Learning
-numpy
-# pandas
-# scikit-learn
-# scipy
-matplotlib
-# seaborn
+# defaul libraries      # https://docs.python.org/ja/
+# import os
+# import sys
+# import io
+# import math
+# import random
+# import pprint
+# import time
+# import datetime
+# import typing
+# import json
+# import glob
+# import requests
+# import warnings
+# import gc
+# import pprint
+# import re
 
 
-# Deep Learning
-# tensorflow
-# torch
-# torchvision
-# torchtext
+# import numpy as np    # https://numpy.org/
+# import pandas as pd   # https://pandas.pydata.org/
+# import sklearn        # https://scikit-learn.org/stable/
+# import scipy          # https://scipy.org/
 
 
-# Scraping
-# requests
-# beautifulsoup
-# scrapy
-# selenium
+# import matplotlib     # https://matplotlib.org/stable/index.html
+# import seaborn        # https://seaborn.pydata.org/index.html
+# import plolty         # https://plotly.com/python/
 
-# Test
-# pytest
 
-#Others
-jupyter
-#kaggle
+# import tensorflow     # https://www.tensorflow.org/
+# import torch          # https://pytorch.org/
+# import transformers   # https://huggingface.co/transformers/
+
+
+# import cv2            # https://opencv.org/
+# import torchvision    # https://pytorch.org/vision/stable/index.html
+
+
+# import nltk           # https://www.nltk.org/
+# import spacy          # https://spacy.io/
+# import torchtext      # https://pytorch.org/text/stable/index.html
+
+
+# import beautifulsoup  # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+# import scrapy         # https://scrapy.org/
+# import selenium       # https://www.selenium.dev/
+
+
+# import pytest         # https://docs.pytest.org/
+# import sympy          # https://www.sympy.org/en/index.html
+# import tqdm           # https://tqdm.github.io/
+# import flake8         # https://flake8.pycqa.org/
+# import jupyter        # https://docs.jupyter.org/
+# import kaggle         # https://github.com/Kaggle/kaggle-api
