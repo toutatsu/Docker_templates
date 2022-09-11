@@ -8,14 +8,14 @@ Dockerテンプレート用レポジトリ
 
 ---
 
-## 構成
+# 構成
 - Dockerfile
 <!-- - [Dockerfile](./Dockerfile) -->
-- [compose.yaml](./compose.yaml)q
+- [compose.yaml](./compose.yaml)
 
 
 ---
-## コマンド
+# コマンド
 
 [compose](https://docs.docker.jp/engine/reference/commandline/compose.html)
 
@@ -26,32 +26,36 @@ Dockerテンプレート用レポジトリ
 ---
 
 
-## 手順
+## compose
 
 
-## 1.imageを作成
 
 ---
 
-[docker compose build](https://docs.docker.jp/engine/reference/commandline/compose_build.html)
-
+### [docker compose build](https://docs.docker.jp/engine/reference/commandline/compose_build.html)
+<details><summary>
 サービスの構築もしくは再構築です。
+</summary>
 
 `docker compose build [SERVICE...]`
+</details>
 
 ---
 
-[docker compose start](https://docs.docker.jp/engine/reference/commandline/compose_start.html)
-
+### [docker compose start](https://docs.docker.jp/engine/reference/commandline/compose_start.html)
+<details><summary>
 サービスを開始します。
+</summary>
 
 `docker compose start [SERVICE...]`
+</details>
 
 ---
 
-[docker compose up](https://docs.docker.jp/engine/reference/commandline/compose_build.html)
-
+### [docker compose up](https://docs.docker.jp/engine/reference/commandline/compose_build.html)
+<details><summary>
 コンテナを作成し、開始します。
+</summary>
 
 (docker compose build + docker compose start)
 
@@ -63,23 +67,33 @@ Dockerテンプレート用レポジトリ
 `--detach`:デタッチド・モード：バックグラウンドでコンテナを実行
 
 (`--attach`:サービスの出力にアタッチする)
+</details>
 
 ---
 
+### [docker compose stop](https://docs.docker.jp/engine/reference/commandline/compose_stop.html)
+<details><summary>
+サービスを停止します。
+</summary>
 
-## 2.imageからcontainerを作成
+`docker compose stop [SERVICE...]`
 
-## 3.containerを実行
+</details>
 
-[docker container start]()
- 
-
-## 4.containerに接続
 ---
 
-[docker container exec](https://docs.docker.jp/engine/reference/commandline/container_exec.html)
+## image
 
+## container
+
+<!-- [docker container start]() -->
+
+---
+
+### [docker container exec](https://docs.docker.jp/engine/reference/commandline/container_exec.html)
+<details><summary>
 実行中のコンテナ内でコマンドを実行します。
+</summary>
 
 `docker container exec [OPTIONS] CONTAINER COMMAND [ARG...]`
 
@@ -87,18 +101,23 @@ Dockerテンプレート用レポジトリ
 
 `--tty`:疑似TTYを割り当て
 
----
-
-
-
-[docker compose stop](https://docs.docker.jp/engine/reference/commandline/compose_stop.html)
-
-サービスを停止します。
-
-`docker compose stop [SERVICE...]`
+</details>
 
 ---
-<!-- 
+### [docker container run](https://docs.docker.jp/engine/reference/commandline/run.html)
+
+<details>
+<summary>新しいコンテナでコマンドを実行します。</summary>
+
+`docker container run --interactive --tty --name docker_test_container docker_test_image:test /bin/bash`
+
+</details>
+
+---
+
+---
+
+---
 
 ### [build](https://docs.docker.jp/engine/reference/commandline/build.html)
 
@@ -117,62 +136,12 @@ Dockerテンプレート用レポジトリ
 
 `docker create [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
-
-
 </details>
-
-### 3. [start](https://docs.docker.jp/engine/reference/commandline/start.html)
-
-<details>
-<summary>1つまたは複数のイメージを tar アーカイブに保存</summary>
-
-
-`docker start [OPTIONS] CONTAINER [CONTAINER...]`
-
-</details>
-
-###  [createとstartを実行:run](https://docs.docker.jp/engine/reference/commandline/run.html)
-
-
-<details>
-<summary>imageからcontainerをcreate</summary>
-
-`docker container run --interactive --tty --name docker_test_container docker_test_image:test /bin/bash`
-
-
-</details>
-
-### 4.[exec](https://docs.docker.jp/engine/reference/commandline/exec.html)
-
-<details>
-<summary>imageからcontainerをcreate</summary>
-
-
-
-`docker exec --interactive --tty container_name /bin/bash`
-
-
-</details>
-
-### 4.[compose](a)
-
-<details>
-<summary>imageからcontainerをcreate</summary>
-
-
-
-`docker compose build {service name}`
-
-
-`docker compose up`
-
-
-</details> -->
-
 
 
 ---
-
+---
+---
 
 ## その他
 
