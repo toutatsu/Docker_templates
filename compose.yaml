@@ -24,7 +24,7 @@ services:
         volumes:
             -   type: bind
                 source: ./gcc/cpp
-                target: /home
+                target: /root/workspace/
 
     python:
         image: python_image:latest
@@ -37,7 +37,7 @@ services:
         container_name: python_container
         hostname: python_container_host
 
-        working_dir: '/root/'
+        working_dir: '/root/workspace/'
 
         # shm_size: '1gb'
 
@@ -51,8 +51,8 @@ services:
 
         volumes:
             -   type: bind
-                source: ./python
-                target: /root
+                source: ./python/
+                target: /root/workspace/
 
         deploy:
             resources:
@@ -106,7 +106,7 @@ services:
         container_name: ubuntu_container
         hostname: ubuntu_container_host
         
-        working_dir: '/root/'
+        working_dir: '/root/workspace/'
 
         stdin_open: true
         tty: true
@@ -120,5 +120,5 @@ services:
 
         volumes:
             -   type: bind
-                source: ./ubuntu
-                target: /root
+                source: ./ubuntu/
+                target: /root/workspace/
